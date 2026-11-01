@@ -1,0 +1,153 @@
+# FitBuddy – Project Documentation
+
+## 📌 Overview
+FitBuddy is an **AI-powered fitness web application** designed to help users track workouts, analyze nutrition, and maintain a personalized fitness journey.  
+The platform integrates **AI/ML models** for workout recommendations and meal analysis.  
+
+---
+
+## 🚀 Features
+
+### 1. **Authentication**
+- User **Sign Up** with Name, Email, Address, Phone, Username, Password.
+- Secure **Login** with Username + Password or Email + Password.
+- Passwords stored securely (hashed).
+- Data saved in a **database**.
+
+### 2. **Landing Page**
+- Show **Active Users**, **Benefits**, **AI-powered Features**.
+- CTA Buttons:  
+  - `Start Free` → Opens Sign Up  
+  - `Watch Demo` → Shows video demo
+
+### 3. **Dashboard (Post Login)**
+- Displays:
+  - Total steps
+  - Total workout hours
+  - AI-recommended workouts for the day
+- Start workouts (e.g., cycling, jogging) → Timer + Progress tracking.
+- Sidebar with: **Profile | Workouts | Nutrition | Settings**
+
+### 4. **Profile**
+- View username, email, phone, address.
+- Update profile info.
+- Upload/change profile picture.
+
+### 5. **Workouts**
+- Categories:  
+  - Bulking (gain weight)  
+  - Weight Loss  
+  - Goal Physique  
+- AI suggests workouts (e.g., weight training, cardio, zumba, yoga).
+- Progress tracking (daily/weekly/monthly).
+
+### 6. **Nutrition**
+- Upload meal image → AI/ML model detects:
+  - Calories
+  - Protein, Fats, Carbs
+  - Vitamins & Minerals
+- Suggests:
+  - Alternative healthy foods
+  - Protein-rich options
+  - Personalized diet plans
+- Tracks nutrition history.
+
+### 7. **Settings**
+- Switch **Light / Dark Mode**
+- Manage notifications & privacy.
+
+---
+
+## 🏗️ Tech Stack
+
+### Frontend
+- **Option 1:** HTML, CSS, JavaScript (basic MVP)  
+- **Option 2 (recommended later):** React.js / Next.js + TailwindCSS  
+
+### Backend
+- Node.js + Express.js  
+
+### Database
+- MySQL / MongoDB  
+
+### AI/ML
+- TensorFlow / PyTorch for meal recognition & calorie estimation
+- Recommendation system for workouts  
+
+### Authentication
+- JWT (JSON Web Token) or Passport.js  
+
+### Hosting
+- Frontend: Vercel / Netlify  
+- Backend: Render / AWS / Heroku  
+
+---
+
+## 🗄️ Database Schema
+
+### `Users`
+| Field         | Type          | Notes                  |
+|---------------|--------------|------------------------|
+| id            | INT / ObjectId| Primary Key            |
+| name          | VARCHAR(100) |                        |
+| email         | VARCHAR(100) | Unique                 |
+| phone         | VARCHAR(20)  |                        |
+| address       | TEXT         |                        |
+| username      | VARCHAR(50)  | Unique                 |
+| password_hash | TEXT         | Stored securely        |
+| created_at    | TIMESTAMP    | Auto                   |
+
+### `Workouts`
+| Field       | Type          | Notes                 |
+|-------------|--------------|-----------------------|
+| workout_id  | INT / ObjectId| Primary Key           |
+| user_id     | INT / ObjectId| Foreign Key           |
+| type        | VARCHAR(50)  | (Cardio, Yoga, etc.)  |
+| duration    | INT          | In minutes            |
+| date        | DATE         |                       |
+| status      | VARCHAR(20)  | Completed / Skipped   |
+
+### `Nutrition`
+| Field      | Type          | Notes                   |
+|------------|--------------|-------------------------|
+| meal_id    | INT / ObjectId| Primary Key             |
+| user_id    | INT / ObjectId| Foreign Key             |
+| calories   | FLOAT        |                         |
+| protein    | FLOAT        | g                       |
+| fats       | FLOAT        | g                       |
+| carbs      | FLOAT        | g                       |
+| vitamins   | TEXT         | JSON data of vitamins   |
+| date       | DATE         |                         |
+
+### `User_Settings`
+| Field         | Type   | Notes             |
+|---------------|--------|-------------------|
+| user_id       | INT    | Foreign Key       |
+| theme         | ENUM   | Light / Dark      |
+| notifications | BOOL   | On / Off          |
+
+---
+
+## 🔄 System Flow
+
+1. **User visits site →** Sees Landing Page  
+2. **Sign Up / Login →** Account created & authenticated  
+3. **Dashboard →** Personalized info (steps, workouts, diet)  
+4. **Workouts →** User selects goal → AI recommends workouts  
+5. **Nutrition →** User uploads meal → AI analyzes nutrition  
+6. **Profile & Settings →** Manage account & preferences  
+
+---
+
+## 📊 Future Enhancements
+- Gamification (badges, leaderboards)
+- Social community (friends & challenges)
+- Integration with smartwatches & health apps
+- AI chatbot for fitness guidance
+
+---
+
+## ✅ Conclusion
+FitBuddy provides an **end-to-end fitness journey** using **AI + ML**.  
+From workout planning to meal tracking, it’s a **personalized fitness companion** that grows with the user.  
+

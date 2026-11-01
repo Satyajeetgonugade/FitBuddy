@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy - Fitness Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/dashboardStyles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
+    <button class="sidebar-toggle" id="sidebarToggle">‹</button>
+    
+    <div class="logo">
+        <div class="logo-icon">F</div>
+        <span class="logo-text">FitBuddy</span>
+    </div>
+    
+    <ul class="nav-menu">
+        <li class="nav-item">
+            <a href="#" class="nav-link active tooltip" data-tooltip="Dashboard">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" class="nav-icon" alt="Home">
+                <span class="nav-text">Home</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link tooltip" data-tooltip="Profile">
+                <img src="https://cdn-icons-png.flaticon.com/128/456/456212.png" class="nav-icon" alt="Profile">
+                <span class="nav-text">Profile</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link tooltip" data-tooltip="Workouts">
+                <img src="https://cdn-icons-png.flaticon.com/128/6793/6793958.png" class="nav-icon" alt="Workouts">
+                <span class="nav-text">Workouts</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link tooltip" data-tooltip="Nutrition">
+                <img src="https://cdn-icons-png.flaticon.com/128/2446/2446118.png" class="nav-icon" alt="Nutrition">
+                <span class="nav-text">Nutrition</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link tooltip" data-tooltip="Settings">
+                <img src="https://cdn-icons-png.flaticon.com/512/3524/3524659.png" class="nav-icon" alt="Settings">
+                <span class="nav-text">Settings</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Header -->
+            <header class="header fade-in">
+                <div class="header-left">
+                    <h1 class="header-title">Welcome back, Alex!</h1>
+                    <p class="header-subtitle">Ready to crush your fitness goals today?</p>
+                </div>
+                <div class="header-controls">
+                    <button class="menu-toggle" id="menuToggle">☰</button>
+                </div>
+            </header>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid fade-in">
+                <!-- Overview Section -->
+                <section class="overview-section">
+                    <h2 class="section-title">
+                        <img src="https://cdn-icons-png.flaticon.com/128/15219/15219582.png" class="nav-icon" alt="Steps Overview" />
+                        Steps Overview
+                    </h2>
+                    <div class="chart-container">
+                        <canvas id="stepsChart"></canvas>
+                    </div>
+                </section>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="stepCount">12,847</div>
+                        <div class="stat-label">Steps Today</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">2.5h</div>
+                        <div class="stat-label">Workout Time</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workouts Section -->
+            <section class="workouts-section fade-in">
+                <h2 class="section-title">
+                    <img src="https://cdn-icons-png.flaticon.com/128/7299/7299732.png" class="nav-icon" alt="todays workout">
+                    Today's Workouts
+                </h2>
+                <div class="workouts-grid">
+                    <div class="workout-card">
+                        <div class="workout-header">
+                            <div class="workout-info">
+                                <h3 class="workout-title">Bicycle Drill</h3>
+                                <div class="workout-meta">
+                                    <span class="workout-time">30 min</span>
+                                    <span class="workout-category">Cardio</span>
+                                </div>
+                            </div>
+                            <img src="https://cdn-icons-png.flaticon.com/128/3198/3198344.png" class="workout-icon">
+                        </div>
+                        
+                        <div class="workout-stats">
+                            <div class="workout-stat">
+                                <div class="workout-stat-value">245</div>
+                                <div class="workout-stat-label">Calories</div>
+                            </div>
+                            <div class="workout-stat">
+                                <div class="workout-stat-value">23</div>
+                                <div class="workout-stat-label">Minutes Left</div>
+                            </div>
+                        </div>
+
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span class="progress-label">Progress</span>
+                                <span class="progress-percentage">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill cardio" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="workout-footer">
+                            <span class="time-left">⏱️ 7 min left</span>
+                            <button class="start-btn">Continue</button>
+                        </div>
+                    </div>
+
+                    <div class="workout-card">
+                        <div class="workout-header">
+                            <div class="workout-info">
+                                <h3 class="workout-title">Jogging Hero</h3>
+                                <div class="workout-meta">
+                                    <span class="workout-time">45 min</span>
+                                    <span class="workout-category">Running</span>
+                                </div>
+                            </div>
+                            <img src="https://cdn-icons-png.flaticon.com/128/8704/8704495.png" class="workout-icon">
+                        </div>
+                        
+                        <div class="workout-stats">
+                            <div class="workout-stat">
+                                <div class="workout-stat-value">420</div>
+                                <div class="workout-stat-label">Calories</div>
+                            </div>
+                            <div class="workout-stat">
+                                <div class="workout-stat-value">45</div>
+                                <div class="workout-stat-label">Minutes Left</div>
+                            </div>
+                        </div>
+
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span class="progress-label">Progress</span>
+                                <span class="progress-percentage">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill running" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="workout-footer">
+                            <span class="time-left">⏱️ 45 min left</span>
+                            <button class="start-btn">Start</button>
+                        </div>
+                    </div>
+
+                    <div class="workout-card">
+                        <div class="workout-header">
+                            <div class="workout-info">
+                                <h3 class="workout-title">Healthy Busy</h3>
+                                <div class="workout-meta">
+                                    <span class="workout-time">20 min</span>
+                                    <span class="workout-category">Strength</span>
+                                </div>
+                            </div>
+                            <img src="https://cdn-icons-png.flaticon.com/128/10514/10514116.png" class="workout-icon">
+                        </div>
+                        
+                        <div class="workout-stats">
+                            <div class="workout-stat">
+                                <div class="workout-stat-value">180</div>
+                                <div class="workout-stat-label">Calories</div>
+                            </div>
+                            <div class="workout-stat">
+                                <div class="workout-stat-value">0</div>
+                                <div class="workout-stat-label">Minutes Left</div>
+                            </div>
+                        </div>
+
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span class="progress-label">Progress</span>
+                                <span class="progress-percentage">100%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill strength" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="workout-footer">
+                            <span class="time-left">✅ Completed</span>
+                            <button class="start-btn completed">Review</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Food Recognition Section -->
+            <section class="food-recognition-section fade-in">
+                <h2 class="section-title">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2720/2720540.png" class="nav-icon" alt="food recognition">
+                    Analyze Your Meal
+                </h2>
+                <div class="recognition-container">
+                    <div class="upload-area">
+                        <p>Upload an image of your food to get its nutritional information.</p>
+                        <input type="file" id="foodImageInput" accept="image/*" style="display: none;">
+                        <button class="upload-btn" onclick="document.getElementById('foodImageInput').click();">Choose Image</button>
+                        <button id="analyzeFoodBtn" class="analyze-btn" disabled>Analyze Food</button>
+                    </div>
+                    <div class="result-area">
+                        <div id="imagePreviewContainer" class="image-preview-container" style="display: none;">
+                            <img id="imagePreview" src="#" alt="Food Preview">
+                        </div>
+                        <div id="nutritionResult" class="nutrition-result-container">
+                            <!-- Results will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Chatbot -->
+        <div class="chatbot">
+            <div class="chatbot-icon" id="chatbotIcon">
+                <img src="https://cdn-icons-png.flaticon.com/128/1264/1264531.png" alt="Chatbot">
+            </div>
+            <div class="chatbot-window" id="chatbotWindow">
+                <div class="chatbot-header">
+                    <h3>FitBot</h3>
+                    <button class="close-btn" id="closeChatbot">×</button>
+                </div>
+                <div class="chatbot-body" id="chatbotBody">
+                    <!-- Chat messages will be appended here -->
+                </div>
+                <div class="chatbot-footer">
+                    <input type="text" id="chatbotInput" placeholder="Ask a fitness question...">
+                    <button id="chatbotSend">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/dashboardScript.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+motor
+pydantic
+passlib[bcrypt]
+python-jose[cryptography]
+python-dotenv
+tensorflow
+tensorflowjs
+Pillow
+python-multipart

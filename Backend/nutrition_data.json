@@ -1,0 +1,66 @@
+{
+  "apple_pie": {
+    "calories": 300,
+    "protein": 3,
+    "carbs": 45,
+    "fats": 15,
+    "unit": "1 slice (125g)"
+  },
+  "baby_back_ribs": {
+    "calories": 600,
+    "protein": 40,
+    "carbs": 20,
+    "fats": 40,
+    "unit": "1/2 rack (250g)"
+  },
+  "baklava": {
+    "calories": 250,
+    "protein": 3,
+    "carbs": 30,
+    "fats": 15,
+    "unit": "1 piece (50g)"
+  },
+  "caesar_salad": {
+    "calories": 400,
+    "protein": 10,
+    "carbs": 15,
+    "fats": 35,
+    "unit": "1 serving (200g)"
+  },
+  "beef_tartare": {
+    "calories": 250,
+    "protein": 25,
+    "carbs": 2,
+    "fats": 15,
+    "unit": "100g"
+  },
+  "cheesecake": {
+    "calories": 400,
+    "protein": 6,
+    "carbs": 30,
+    "fats": 28,
+    "unit": "1 slice (100g)"
+  },
+  "chicken_wings": {
+    "calories": 430,
+    "protein": 30,
+    "carbs": 0,
+    "fats": 35,
+    "unit": "100g"
+  },
+  "chocolate_cake": {
+    "calories": 380,
+    "protein": 4,
+    "carbs": 50,
+    "fats": 20,
+    "unit": "1 slice (100g)"
+  },
+  "unknown": {
+    "calories": 0,
+    "protein": 0,
+    "carbs": 0,
+    "fats": 0,
+    "unit": "N/A",
+    "message": "Food not recognized."
+  }
+}
